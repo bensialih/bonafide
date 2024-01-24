@@ -10,11 +10,6 @@ mod endpoints;
 use models::{Entry};
 use endpoints::{root, basic, list_ips};
 
-// TODO: create api endpoint to receive log entries
-// debug any issues
-// make this deployable
-// test bottlenecks
-// benchmark
 
 #[tokio::main]
 async fn main() {
