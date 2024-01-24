@@ -149,6 +149,7 @@ dependencies = [
  "axum",
  "chrono",
  "serde",
+ "serde_json",
  "timely",
  "tokio",
  "tracing",
