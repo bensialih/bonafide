@@ -2,4 +2,9 @@
 server.host = "127.0.0.1"
 server.port = 3000
 
+database.host = "127.0.0.1"
+database.user = "rexrepo"
+database.password = "rexrepo"
+database.dbname = "logging"
+database.port = 5432
 

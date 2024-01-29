@@ -12,17 +12,28 @@ pub struct ServerSettings {
 }
 
 #[derive(Deserialize, Debug)]
+pub struct DatabaseSettings {
+	pub host: Ipv4Addr,
+	pub user: String,
+	pub password: Option<String>,
+	pub dbname: String,
+	pub port: u16,
+}
+
+#[derive(Deserialize, Debug)]
 pub struct Settings {
 	pub server: ServerSettings,
+	pub database: DatabaseSettings,
 }
 
 
 impl Settings {
-	pub fn new() -> Result<Settings, io::Error> {
+	pub fn new(filename: &'static str) -> Result<Settings, io::Error> {
 
 		let config = Config::builder()
-			.add_source(File::with_name("./settings"))
-			.build().expect("expected file");
+			.add_source(File::with_name(filename))
+			.build()
+			.expect(format!("expected file {} not found", filename).as_str());
 
 		let settings = config.try_deserialize::<Settings>().unwrap();
 		Ok(settings)
