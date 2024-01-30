@@ -1,17 +1,28 @@
 # bonafide
 
-basic application axum endpoint written in rust to receive logs from where and process them accordingly.
+basic udp application created to receive and consolidate logs.
+
 
 ## motivation
 
-a light weight fail2ban alternative taht doesnt eat up too much cpu and RAM.
+Trying to create a lightwight and specialized version of fail2ban that consumes a minimal amount of CPU and RAM.
 
 
 ## TODO
-- create api endpoint to receive log entries
-- pass api properties as env values
+- [x] create api endpoint to receive log entries
+- [ ] create endpoint that receives both single and batch logs
+- [ ] pass api properties as env values
+- [ ] Look to materlize for insperation on how data can be calculated with the lowewst latency.
 
-- debug any issues
-- make this deployable
-- test bottlenecks
-- benchmark
+- [ ] test bottlenecks
+- [ ] benchmark
+
+
+## setup
+
+- git clone repo
+- look at settings.toml and put in your own credentials
+- create a .env file with postgres database credentials. This is loaded when docker compose is ran.
+- docker-compose up in a separate termnial
+- cargo run
+- send udp packets to endpoint.

@@ -21,5 +21,3 @@ pub fn create_pool(db_settings: DatabaseSettings) -> Pool {
         .build()
         .unwrap()
 }
-
-
