@@ -15,6 +15,7 @@ tracing-subscriber = "0.3.18"
 
 
 resolver = "2"
+edition = "2021"
 
 [profile.release]
 debug = 1

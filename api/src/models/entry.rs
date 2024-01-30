@@ -7,8 +7,8 @@ use std::fmt;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Entry {
-	ip: Ipv4Addr,
-	datetime: Option<NaiveDateTime>,
+	pub ip: Ipv4Addr,
+	pub datetime: Option<NaiveDateTime>,
 }
 
 struct DateTimeVisitor;
